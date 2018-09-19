@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import AOS from 'aos';
 
@@ -8,7 +8,8 @@ import {
     closeGeod,
 } from './redux';
 
-import HomePage from './pages/HomePage';
+import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
 
 class AppContainer extends Component {
     componentDidMount() {
@@ -22,9 +23,10 @@ class AppContainer extends Component {
 
     render() {
         return (
-            <BrowserRouter>
+            <Router>
                 <div className="text-white">
                     <Route exact path='/' component={HomePage} />
+                    <Route path='/login' component={LoginPage} />
                     {/* <Route path="/clinician" render={() => <Dashboard {...{ currentDash: 'clinician' }} />} />
                     <Route path="/doctor" render={() => <Dashboard {...{ currentDash: 'doctor' }} />} /> */}
 
@@ -39,7 +41,7 @@ class AppContainer extends Component {
                         </button>
                     }
                 </div>
-            </BrowserRouter>
+            </Router>
         );
     }
 }

@@ -25,7 +25,8 @@ module.exports = {
         compress: true,
         hot: true,
         open: true,
-        port: 8080
+        port: 8080,
+        historyApiFallback: true,
     },
     resolve: {
         extensions: [".js", ".jsx"],
@@ -41,18 +42,6 @@ module.exports = {
         new webpack.DefinePlugin({
             PRODUCTION: process.env.NODE_ENV === "production"
         }),
-        // new HtmlWebpackPlugin({
-        //   title: 'Project Demo',
-        //   hash: true,
-        //   template: './src/index.html'
-        // }),
-        // new ExtractTextPlugin({
-        //   filename: 'app.css',
-        //   disable: !isProd,
-        //   allChunks: true
-        // }),
-        // new webpack.HotModuleReplacementPlugin(),
-        // new webpack.NamedModulesPlugin()
     ],
     module: {
         rules: [
@@ -61,23 +50,12 @@ module.exports = {
                 exclude: /(node_modules|bower_components)/,
                 use: ["babel-loader"],
             },
-            // {
-            //   test: /\.scss$/,
-            //   use: cssConfig
-            // },
             {
                 test: /\.scss$/,
                 use: ["style-loader", "css-loader", "postcss-loader", "sass-loader"],
             },
             {
                 test: /\.(png|jp(e*)g|JPG|svg)$/,
-                // use: [{
-                //   loader: "url-loader",
-                //   options: {
-                //     limit: 8000,
-                //     name: "images/[hash]-[name].[ext]"
-                //   }
-                // }]
                 use: [
                     'file-loader?name=[name].[ext]&outputPath=images/&publicPath=images/',
                     'image-webpack-loader'
