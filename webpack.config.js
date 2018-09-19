@@ -14,7 +14,7 @@ const path = require('path')
 // var cssConfig = isProd ? cssProd : cssDev
 
 module.exports = {
-    entry: path.resolve(__dirname, "src/js/main.js"),
+    entry: path.resolve(__dirname, "src/js/index.js"),
     output: {
         path: path.resolve(__dirname, 'dist'),
         publicPath: "/",
