@@ -8,6 +8,11 @@ import {
     closeGeod,
 } from './redux';
 
+const ScrollToTop = () => {
+    window.scrollTo(0, 0);
+    return null;
+};
+
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 
@@ -25,6 +30,7 @@ class AppContainer extends Component {
         return (
             <Router>
                 <div className="text-white">
+                    <Route component={ScrollToTop} />
                     <Route exact path='/' component={HomePage} />
                     <Route path='/login' component={LoginPage} />
                     {/* <Route path="/clinician" render={() => <Dashboard {...{ currentDash: 'clinician' }} />} />

@@ -5,9 +5,8 @@ import image from './assets/avatar.jpg';
 
 function HomePage(props) {
     return(
-        <div>
+        <div className="app">
             Homepage wuhw
-            <Link to={"/login"}>Login</Link>
             <div className="container">
                 <div className="row">
                     <div className="col">
@@ -19,6 +18,8 @@ function HomePage(props) {
                     </div>
                 </div>
             </div>
+            <Link to={"/login"}>Login</Link>
+
         </div>
     )
 }

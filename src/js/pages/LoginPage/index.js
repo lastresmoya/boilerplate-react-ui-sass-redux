@@ -2,7 +2,7 @@ import React from 'react';
 
 function LoginPage (props) {
     return(
-        <div>
+        <div className="app">
             Login Page
         </div> 
     )
