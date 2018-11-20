@@ -31,6 +31,10 @@ module.exports = {
     resolve: {
         extensions: [".js", ".jsx"],
     },
+    devtool: false,
+    performance: {
+        hints: false, // enum    maxAssetSize: 200000, // int (in bytes),
+    },
     plugins: [
         new CopyWebpackPlugin([
             {
